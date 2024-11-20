@@ -9,7 +9,7 @@ public class Visitor extends Person {
     }
 
     //Second Constructor
-    public Visitor ((String name, String gender, int age, String membershipType, int parkMemberID) {
+    public Visitor (String name, String gender, int age, String membershipType, int parkMemberID) {
         super (String name, String gender, int age);
         this.membershipType = membershipType;
         this.parkMemberID = parkMemberID;
