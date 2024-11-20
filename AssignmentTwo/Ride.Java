@@ -1,8 +1,12 @@
+import java.util.Queue;
+import java.util.LinkedList;
+
 //Class
-public class Ride {
+public class Ride implements RideInterface {
     private String rideName;
     private int rideWaitingTime;
     private Employee rideOperator;
+    private Queue <Visitor> storeVisitors;
 
     //Default Constructor
     public Ride {
