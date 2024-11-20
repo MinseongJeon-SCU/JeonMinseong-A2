@@ -1,5 +1,5 @@
 //Class
-Public class Person {
+Public abstract class Person {
     private String name;
     private String gender;
     private int age;
