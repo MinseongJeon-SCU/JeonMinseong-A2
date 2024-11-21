@@ -6,7 +6,7 @@ public class Ride implements RideInterface {
     private String rideName;
     private int rideWaitingTime;
     private Employee rideOperator;
-    private Queue <Visitor> storeVisitors;
+    private Queue <Visitor> waitingLine;
 
     //Default Constructor
     public Ride {
@@ -18,6 +18,7 @@ public class Ride implements RideInterface {
         this.rideName = rideName;
         this.rideWaitingTime = rideWaitingTime;
         this.rideOperator = rideOperator;
+        this.waitingLine = new LinkedList<>();
     }
 
     //Getter and Setter
@@ -43,6 +44,21 @@ public class Ride implements RideInterface {
 
     public void setEmployeeName (Employee rideOperator) {
         this.rideOperator = rideOperator;
+    }
+
+    @Override
+    public void AddVisitorToQueue (Visitor visitor) {
+        waitingLine.add (visitor); //add a Visitor to the Queue
+    }
+
+    @Override
+    public void RemoveVisitorFromQueue () {
+        Visitor removeVisitor = waitingLine.poll (); //remove a Visitor from the Queue
+    }
+
+    @Override
+    public void PrintQueue () {
+        
     }
 
 }
