@@ -1,11 +1,11 @@
 //Class
-Public abstract class Person {
+public abstract class Person {
     private String name;
     private String gender;
     private int age;
 
     //Default Constructor
-    public Person {
+    public Person () {
 
     }
 

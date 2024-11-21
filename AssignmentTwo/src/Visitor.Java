@@ -4,19 +4,19 @@ public class Visitor extends Person {
     private int parkMemberID;
     
     //Default Constructor 
-    public Visitor {
+    public Visitor () {
         super ();
     }
 
     //Second Constructor
     public Visitor (String name, String gender, int age, String membershipType, int parkMemberID) {
-        super (String name, String gender, int age);
+        super(name, gender, age);
         this.membershipType = membershipType;
         this.parkMemberID = parkMemberID;
     }
 
     //Getter and Setter
-    public getMembershipType () {
+    public String getMembershipType () {
         return membershipType;
     }
 
@@ -24,7 +24,7 @@ public class Visitor extends Person {
         this.membershipType = membershipType;
     }
 
-    public getParkMemberID () {
+    public int getParkMemberID () {
         return parkMemberID;
     }
 
