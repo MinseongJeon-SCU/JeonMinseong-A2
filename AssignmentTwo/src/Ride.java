@@ -49,6 +49,7 @@ public class Ride implements RideInterface {
         this.rideOperator = rideOperator;
     }
 
+    //Adding visitors in the queue
     @Override
     public void addVisitorToQueue (Visitor visitor) {
         if (visitor != null) { 
@@ -59,22 +60,24 @@ public class Ride implements RideInterface {
         }
     }
 
+    //Removing visitors from the queue
     @Override
     public void removeVisitorFromQueue() {
         if (!waitingLine.isEmpty()) {
-            Visitor removedVisitor = waitingLine.poll(); 
+            Visitor removedVisitor = waitingLine.poll();
             System.out.println(removedVisitor.getName() + " has been removed from the queue.");
         } else {
-            System.out.println("Queue is empty.");
+            System.out.println("There is no visitor in the queue");
         }
     }
 
+    //Printing the queue
     @Override
     public void printQueue() {
         if (waitingLine.isEmpty()) {
             System.out.println("There are no visitors in the queue for the " + this.rideName);
         } else {
-            System.out.println("Visitor is in the queue for the " + this.rideName);
+            System.out.println("The list below shows the visitors who are in the queue for the " + this.rideName);
             for (Visitor visitor : waitingLine) {
                 System.out.println("Visitor Name-" + visitor.getName() + " Visitor Gender-" + visitor.getGender() + " Visitor Age-" +
                 visitor.getAge() + " Membership Type-" + visitor.getMembershipType() + " Park Member ID-" + visitor.getParkMemberID());

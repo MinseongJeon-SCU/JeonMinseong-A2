@@ -23,9 +23,9 @@ public class AssignmentTwo {
      R1.addVisitorToQueue(v5);
 
      R1.printQueue();
-
-     //R1.removeVisitorFromQueue(v3); 
-
+    
+     R1.removeVisitorFromQueue(); //Since a queue is being used, the first object in the queue will be removed.
+    
      R1.printQueue();
 
     }
