@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -7,14 +8,14 @@ public class Ride implements RideInterface {
     private int rideWaitingTime;
     private Queue<Visitor> waitingLine;
     private Employee rideOperator;
-    private LinkedList<Visitor> visitorHistory;
+    private LinkedList<Visitor> rideHistory;
     
     
 
     //Default Constructor
     public Ride () {
         this.waitingLine = new LinkedList<>();
-        this.visitorHistory = new LinkedList<>();
+        this.rideHistory = new LinkedList<>();
     }
 
     //Second Constructor
@@ -23,7 +24,7 @@ public class Ride implements RideInterface {
         this.rideWaitingTime = rideWaitingTime;
         this.rideOperator = rideOperator;
         this.waitingLine = new LinkedList<>();
-        this.visitorHistory = new LinkedList<>();
+        this.rideHistory = new LinkedList<>();
     }
 
     //Getter and Setter
@@ -86,4 +87,43 @@ public class Ride implements RideInterface {
             }
         }
     }
+
+    //Adding a visitor to the rideH history
+    @Override
+    public void addVisitorToHistory (Visitor visitor) {
+        if (visitor != null) {
+            rideHistory.add(visitor);
+            System.out.println(visitor.getName() + " has been added to the ride history");
+        }
+        else {
+            System.out.println("No ride history");
+        }
+    }
+
+    //Checking whether the visitor is in the ride history
+    @Override
+    public boolean checkVisitorFromHistory (Visitor visitor) {
+        if (rideHistory.contains(visitor)) {
+            System.out.println(visitor.getName() + " is in the ride history");
+            return true;
+        }
+        else {
+            System.out.println(visitor.getName() + " cannot be found in the ride history ");
+            return false;
+        }
+    }
+
+    //Printing a ride history
+    @Override
+    public void printRideHistory () {
+        System.out.println("The list below shows the visitors who have ridden an attraction");
+        Iterator <Visitor> iterator = rideHistory.iterator();
+        while (iterator.hasNext()) {
+            Visitor visitor = iterator.next();
+            System.out.println("Visitor Name-" + visitor.getName() + " Visitor Gender-" + visitor.getGender() + " Visitor Age-" +
+            visitor.getAge() + " Membership Type-" + visitor.getMembershipType() + " Park Member ID-" + visitor.getParkMemberID());
+        }
+    }
+
+
 }

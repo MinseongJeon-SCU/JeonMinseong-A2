@@ -4,6 +4,7 @@ public class AssignmentTwo {
     public static void main(String[] args) {
       AssignmentTwo assignment = new AssignmentTwo();
       assignment.partThree();
+      assignment.partFourA();
     }
 
     public void partThree(){
@@ -31,7 +32,23 @@ public class AssignmentTwo {
     }
 
     public void partFourA(){
+      Employee rideOperator = new Employee("HyeonSeo" , "Female", 30, "Security", 22);
+      Ride R2 = new Ride ("BatMan RollerCoaster", 20, rideOperator);
 
+      Visitor v6 = new Visitor ("Bob", "Male", 31, "Gold", 6);
+      Visitor v7 = new Visitor ("Jaeyong", "Female", 30, "Bronze", 7);
+      Visitor v8 = new Visitor ("Sooil", "Female", 33, "Silver", 8);
+      Visitor v9 = new Visitor ("Sam", "Female", 31, "Gold", 9);
+      Visitor v10 = new Visitor ("Dong", "Female", 36, "Bronze", 10);
+
+      R2.addVisitorToHistory(v6);
+      R2.addVisitorToHistory(v7);
+      R2.addVisitorToHistory(v8);
+      R2.addVisitorToHistory(v9);
+      R2.addVisitorToHistory(v10);
+
+      R2.checkVisitorFromHistory(v6);
+      R2.printRideHistory();
     }
 
     public void partFourB(){

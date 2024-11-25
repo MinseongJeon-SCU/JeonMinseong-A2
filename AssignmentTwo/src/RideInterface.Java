@@ -4,9 +4,9 @@ public interface RideInterface {
     void removeVisitorFromQueue ();
     void printQueue ();
     //void runOneCycle ();
-    //void addVisitorToHistory (Visitor visitor);
-    //boolean checkVisitorFromHistory (Visitor visitor);
+    void addVisitorToHistory (Visitor visitor);
+    boolean checkVisitorFromHistory (Visitor visitor);
     //int numberOfVisitors ();
-    //void printRideHistory ();
+    void printRideHistory ();
 
 }
