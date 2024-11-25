@@ -1,19 +1,20 @@
 import java.util.LinkedList;
 import java.util.Queue;
 
-
 //Class
 public class Ride implements RideInterface {
     private String rideName;
     private int rideWaitingTime;
     private Queue<Visitor> waitingLine;
     private Employee rideOperator;
+    private LinkedList<Visitor> visitorHistory;
     
     
 
     //Default Constructor
     public Ride () {
         this.waitingLine = new LinkedList<>();
+        this.visitorHistory = new LinkedList<>();
     }
 
     //Second Constructor
@@ -22,6 +23,7 @@ public class Ride implements RideInterface {
         this.rideWaitingTime = rideWaitingTime;
         this.rideOperator = rideOperator;
         this.waitingLine = new LinkedList<>();
+        this.visitorHistory = new LinkedList<>();
     }
 
     //Getter and Setter
