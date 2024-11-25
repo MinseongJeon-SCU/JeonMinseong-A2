@@ -125,5 +125,12 @@ public class Ride implements RideInterface {
         }
     }
 
+    //Method for printing the number of visitors in the collection
+    @Override
+    public int numberOfVisitors () {
+        System.out.println("The number of visitors is: ");
+        return rideHistory.size(); //Counting the number of visitors who have ridden an attraction. 
+    }
+
 
 }

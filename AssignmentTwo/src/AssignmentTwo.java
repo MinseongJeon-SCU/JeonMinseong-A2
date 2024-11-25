@@ -49,6 +49,9 @@ public class AssignmentTwo {
 
       R2.checkVisitorFromHistory(v6);
       R2.printRideHistory();
+
+      System.out.println(R2.numberOfVisitors()); //Printing the number of visitors in the ride history. 
+
     }
 
     public void partFourB(){

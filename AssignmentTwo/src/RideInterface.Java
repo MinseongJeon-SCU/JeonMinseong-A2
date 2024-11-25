@@ -6,7 +6,7 @@ public interface RideInterface {
     //void runOneCycle ();
     void addVisitorToHistory (Visitor visitor);
     boolean checkVisitorFromHistory (Visitor visitor);
-    //int numberOfVisitors ();
+    int numberOfVisitors ();
     void printRideHistory ();
 
 }
