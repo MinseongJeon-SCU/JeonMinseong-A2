@@ -35,11 +35,11 @@ public class AssignmentTwo {
       Employee rideOperator = new Employee("HyeonSeo" , "Female", 30, "Security", 22);
       Ride R2 = new Ride ("BatMan RollerCoaster", 20, rideOperator);
 
-      Visitor v6 = new Visitor ("Bob", "Male", 31, "Gold", 6);
-      Visitor v7 = new Visitor ("Jaeyong", "Female", 30, "Bronze", 7);
-      Visitor v8 = new Visitor ("Sooil", "Female", 33, "Silver", 8);
-      Visitor v9 = new Visitor ("Sam", "Female", 31, "Gold", 9);
-      Visitor v10 = new Visitor ("Dong", "Female", 36, "Bronze", 10);
+      Visitor v6 = new Visitor ("Bob", "Male", 20, "Gold", 6);
+      Visitor v7 = new Visitor ("Jaeyong", "Female", 60, "Bronze", 7);
+      Visitor v8 = new Visitor ("Yoonah", "Female", 73, "Silver", 8);
+      Visitor v9 = new Visitor ("Sam", "Female", 59, "Gold", 9);
+      Visitor v10 = new Visitor ("Dong", "Female", 45, "Bronze", 10);
 
       R2.addVisitorToHistory(v6);
       R2.addVisitorToHistory(v7);
@@ -55,6 +55,8 @@ public class AssignmentTwo {
     }
 
     public void partFourB(){
+      Visitor v6 = new Visitor ("Bob", "Male", 20, "Gold", 6);
+      Visitor v7 = new Visitor ("Jaeyong", "Female", 60, "Bronze", 7);
     }
 
 
