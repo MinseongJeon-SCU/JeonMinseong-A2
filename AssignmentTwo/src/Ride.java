@@ -1,3 +1,4 @@
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -133,5 +134,9 @@ public class Ride implements RideInterface {
         return rideHistory.size(); //Counting the number of visitors who have ridden an attraction. 
     }
 
+    //Method for sorting the collection
+    public void sortingTheCollection () {
+        Collections.sort(rideHistory, new Sorting()); //Sorting the ride history collection by age and membership ID. 
+    }
 
 }
