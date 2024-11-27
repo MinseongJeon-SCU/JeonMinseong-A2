@@ -3,8 +3,11 @@ public class AssignmentTwo {
   
     public static void main(String[] args) {
       AssignmentTwo assignment = new AssignmentTwo();
+      System.out.println("==================================");
       assignment.partThree();
+      System.out.println("==================================");
       assignment.partFourA();
+      System.out.println("==================================");
       assignment.partFourB();
     }
 
@@ -70,13 +73,13 @@ public class AssignmentTwo {
       R2.addVisitorToHistory(v8);
       R2.addVisitorToHistory(v9);
       R2.addVisitorToHistory(v10);
-
+      System.out.println("==================================");
+      R2.printRideHistory();
+      
       R2.sortingTheCollection();
       System.out.println("==================================");
       System.out.println("The list below is the sorted list");
       R2.printRideHistory();
-
-
     } 
 
 

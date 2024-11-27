@@ -11,6 +11,8 @@ public class Ride implements RideInterface {
     private Queue<Visitor> waitingLine;
     private Employee rideOperator;
     private LinkedList<Visitor> rideHistory;
+    private int maxRider;
+    private int numOfCycles = 0;
     
     
 
