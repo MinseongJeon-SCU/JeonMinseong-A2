@@ -11,8 +11,8 @@ public class Ride implements RideInterface {
     private Queue<Visitor> waitingLine;
     private Employee rideOperator;
     private LinkedList<Visitor> rideHistory;
-    private int maxRider;
-    private int numOfCycles = 0;
+    private int maxRider = 3;
+    private int numOfCycles;
     
     
 
@@ -20,6 +20,7 @@ public class Ride implements RideInterface {
     public Ride () {
         this.waitingLine = new LinkedList<>();
         this.rideHistory = new LinkedList<>();
+        this.numOfCycles = 0;
     }
 
     //Second Constructor
@@ -141,4 +142,30 @@ public class Ride implements RideInterface {
         Collections.sort(rideHistory, new Sorting()); //Sorting the ride history collection by age and membership ID. 
     }
 
+    @Override
+    public void runOneCycle () {
+        if (rideOperator == null) { 
+            System.out.println ("Due to the absence of the ride operator, the ride is unavailable"); 
+            return;
+        }
+
+        if (waitingLine.isEmpty()) {
+            System.out.println("The ride is unavailable. No one is in the queue.");
+            return;
+        }
+
+        int riders = maxRider;
+        if (waitingLine.size() < maxRider) {
+            riders = waitingLine.size();
+        }
+
+        for (int i = 0; i < riders; i++) {
+            Visitor visitor = waitingLine.poll(); 
+            rideHistory.add(visitor);
+            System.out.println (visitor.getName() + " has been added to the ride history.");
+        }
+
+        numOfCycles++;
+        System.out.println("Total Cycles: " + numOfCycles);
+    }
 }

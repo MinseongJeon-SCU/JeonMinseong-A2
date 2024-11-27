@@ -3,12 +3,14 @@ public class AssignmentTwo {
   
     public static void main(String[] args) {
       AssignmentTwo assignment = new AssignmentTwo();
-      System.out.println("==================================");
+      System.out.println("Part Three=================================");
       assignment.partThree();
-      System.out.println("==================================");
+      System.out.println("Part Four A==================================");
       assignment.partFourA();
-      System.out.println("==================================");
+      System.out.println("Part Four B==================================");
       assignment.partFourB();
+      System.out.println("Part Five==================================");
+      assignment.partFive();
     }
 
     public void partThree(){
@@ -84,7 +86,42 @@ public class AssignmentTwo {
 
 
     public void partFive(){
+      Employee rideOperator = new Employee("HyeonSeo" , "Female", 30, "Security", 22);
+      Ride R2 = new Ride ("BatMan RollerCoaster", 20, rideOperator);
 
+      Visitor v1 = new Visitor ("John", "Male", 31, "Gold", 1);
+      Visitor v2 = new Visitor ("Park", "Female", 30, "Bronze", 2);
+      Visitor v3 = new Visitor ("Kim", "Female", 33, "Silver", 3);
+      Visitor v4 = new Visitor ("Eun", "Female", 31, "Gold", 4);
+      Visitor v5 = new Visitor ("Hwan", "Female", 36, "Bronze", 5);
+      Visitor v6 = new Visitor ("Bob", "Male", 20, "Gold", 66);
+      Visitor v7 = new Visitor ("Jaeyong", "Female", 20, "Bronze", 7);
+      Visitor v8 = new Visitor ("Yoonah", "Female", 73, "Silver", 8);
+      Visitor v9 = new Visitor ("Sam", "Female", 59, "Gold", 9);
+      Visitor v10 = new Visitor ("Dong", "Female", 45, "Bronze", 10);
+
+      
+      R2.addVisitorToQueue(v1);
+      R2.addVisitorToQueue(v2);
+      R2.addVisitorToQueue(v3);
+      R2.addVisitorToQueue(v4);
+      R2.addVisitorToQueue(v5);
+      R2.addVisitorToQueue(v6);
+      R2.addVisitorToQueue(v7);
+      R2.addVisitorToQueue(v8);
+      R2.addVisitorToQueue(v9);
+      R2.addVisitorToQueue(v10);
+
+      R2.printQueue();
+      System.out.println("==================================");
+
+      R2.runOneCycle();
+
+      R2.printQueue();
+      System.out.println("==================================");
+
+      R2.printRideHistory();
+      System.out.println("==================================");
     }
 
     public void partSix(){
