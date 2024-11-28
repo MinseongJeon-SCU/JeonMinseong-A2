@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -125,8 +128,8 @@ public class Ride implements RideInterface {
         Iterator <Visitor> iterator = rideHistory.iterator();
         while (iterator.hasNext()) {
             Visitor visitor = iterator.next();
-            System.out.println("Visitor Name-" + visitor.getName() + " Visitor Gender-" + visitor.getGender() + " Visitor Age-" +
-            visitor.getAge() + " Membership Type-" + visitor.getMembershipType() + " Park Member ID-" + visitor.getParkMemberID());
+                System.out.println("Visitor Name-" + visitor.getName() + " Visitor Gender-" + visitor.getGender() + " Visitor Age-" +
+                visitor.getAge() + " Membership Type-" + visitor.getMembershipType() + " Park Member ID-" + visitor.getParkMemberID());
         }
     }
 
@@ -169,7 +172,21 @@ public class Ride implements RideInterface {
         System.out.println("Total Cycles: " + numOfCycles);
     }
 
-    public void exportRideHistory (String visitors) {
-
+    //Exporting ride history
+    public void exportRideHistory(String visitors) {
+        try (BufferedWriter file = new BufferedWriter(new FileWriter(visitors))) {
+            for (Visitor visitor : rideHistory) {
+                file.write(visitor.getName() + "," +
+                    visitor.getGender() + "," +
+                    visitor.getAge() + "," +
+                    visitor.getMembershipType() + "," +
+                    visitor.getParkMemberID());
+                file.newLine();  
+            }
+            System.out.println("Ride history has been stored into the file" + visitors);
+        } 
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
