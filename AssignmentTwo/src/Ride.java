@@ -168,4 +168,8 @@ public class Ride implements RideInterface {
         numOfCycles++;
         System.out.println("Total Cycles: " + numOfCycles);
     }
+
+    public void exportRideHistory (String visitors) {
+
+    }
 }
