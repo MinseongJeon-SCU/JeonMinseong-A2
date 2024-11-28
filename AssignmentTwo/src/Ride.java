@@ -1,10 +1,13 @@
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
+
 
 
 //Class
@@ -90,8 +93,16 @@ public class Ride implements RideInterface {
         } else {
             System.out.println("The list below shows the visitors who are in the queue for the " + this.rideName);
             for (Visitor visitor : waitingLine) {
-                System.out.println("Visitor Name-" + visitor.getName() + " Visitor Gender-" + visitor.getGender() + " Visitor Age-" +
-                visitor.getAge() + " Membership Type-" + visitor.getMembershipType() + " Park Member ID-" + visitor.getParkMemberID());
+                System.out.println("Visitor Name-" + 
+                visitor.getName() + 
+                " Visitor Gender-" + 
+                visitor.getGender() + 
+                " Visitor Age-" +
+                visitor.getAge() + 
+                " Membership Type-" + 
+                visitor.getMembershipType() + 
+                " Park Member ID-" + 
+                visitor.getParkMemberID());
             }
         }
     }
@@ -128,8 +139,16 @@ public class Ride implements RideInterface {
         Iterator <Visitor> iterator = rideHistory.iterator();
         while (iterator.hasNext()) {
             Visitor visitor = iterator.next();
-                System.out.println("Visitor Name-" + visitor.getName() + " Visitor Gender-" + visitor.getGender() + " Visitor Age-" +
-                visitor.getAge() + " Membership Type-" + visitor.getMembershipType() + " Park Member ID-" + visitor.getParkMemberID());
+                System.out.println("Visitor Name-" 
+                + visitor.getName() + 
+                " Visitor Gender-" + 
+                visitor.getGender() + 
+                " Visitor Age-" +
+                visitor.getAge() + 
+                " Membership Type-" + 
+                visitor.getMembershipType() + 
+                " Park Member ID-" + 
+                visitor.getParkMemberID());
         }
     }
 
@@ -172,20 +191,48 @@ public class Ride implements RideInterface {
         System.out.println("Total Cycles: " + numOfCycles);
     }
 
-    //Exporting ride history
-    public void exportRideHistory(String visitors) {
-        try (BufferedWriter file = new BufferedWriter(new FileWriter(visitors))) {
+    //Exporting the ride history
+    public void exportRideHistory(String visitorFile) {
+        try (BufferedWriter file = new BufferedWriter(new FileWriter(visitorFile))) {
             for (Visitor visitor : rideHistory) {
-                file.write(visitor.getName() + "," +
-                    visitor.getGender() + "," +
-                    visitor.getAge() + "," +
-                    visitor.getMembershipType() + "," +
-                    visitor.getParkMemberID());
+                file.write(visitor.getName() + " , "  +
+                visitor.getGender() + " , " +
+                visitor.getAge() + " , " +
+                visitor.getMembershipType() + " , " +
+                visitor.getParkMemberID());
                 file.newLine();  
             }
-            System.out.println("Ride history has been stored into the file" + visitors);
+
+            System.out.println("Ride history has been stored into the " + visitorFile +" file.");
         } 
         catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //Importing the ride history
+    public void importRideHistory(String visitorFile) {
+        try (BufferedReader br = new BufferedReader(new FileReader(visitorFile))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(" , ");
+                try {
+                    String name = data[0];
+                    String gender = data[1];
+                    int age = Integer.parseInt(data[2]); 
+                    String membershipType = data[3];
+                    int parkMemberID = Integer.parseInt(data[4]); 
+
+                    Visitor visitor = new Visitor(name, gender, age, membershipType, parkMemberID);
+                    rideHistory.add(visitor);  
+                } 
+                
+                catch (NumberFormatException e) {
+                    System.out.println("Wrong Value" + line);
+                }
+            }
+        } 
+            catch (IOException e) {
             e.printStackTrace();
         }
     }

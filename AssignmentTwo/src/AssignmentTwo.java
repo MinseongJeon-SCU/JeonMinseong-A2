@@ -1,6 +1,4 @@
 public class AssignmentTwo {
-
-  
     public static void main(String[] args) {
       AssignmentTwo assignment = new AssignmentTwo();
       System.out.println("Part Three=================================");
@@ -11,6 +9,10 @@ public class AssignmentTwo {
       assignment.partFourB();
       System.out.println("Part Five==================================");
       assignment.partFive();
+      System.out.println("Part Six==================================");
+      assignment.partSix();
+      System.out.println("Part Seven==================================");
+      assignment.partSeven();
     }
 
     public void partThree(){
@@ -125,15 +127,34 @@ public class AssignmentTwo {
     }
 
     public void partSix(){
+      Employee rideOperator = new Employee("HyeonSeo" , "Female", 30, "Security", 22);
+      Ride R2 = new Ride ("BatMan RollerCoaster", 20, rideOperator);
 
+      Visitor v6 = new Visitor ("Bob", "Male", 20, "Gold", 66);
+      Visitor v7 = new Visitor ("Jaeyong", "Female", 20, "Bronze", 7);
+      Visitor v8 = new Visitor ("Yoonah", "Female", 73, "Silver", 8);
+      Visitor v9 = new Visitor ("Sam", "Female", 59, "Gold", 9);
+      Visitor v10 = new Visitor ("Dong", "Female", 45, "Bronze", 10);
+
+      R2.addVisitorToHistory(v6);
+      R2.addVisitorToHistory(v7);
+      R2.addVisitorToHistory(v8);
+      R2.addVisitorToHistory(v9);
+      R2.addVisitorToHistory(v10);
+
+      R2.exportRideHistory("Ride History");
     }
 
     public void partSeven(){
+      Employee rideOperator = new Employee("HyeonSeo" , "Female", 30, "Security", 22);
+      Ride R2 = new Ride ("BatMan RollerCoaster", 20, rideOperator);
 
+      String visitorFile = "Ride History";
+      R2.importRideHistory(visitorFile);
+      R2.printRideHistory();
+      System.out.println("The number of visitors in the ride history is: " + R2.numberOfVisitors());
     }
-
-
-    }
+  }
     
 
 
