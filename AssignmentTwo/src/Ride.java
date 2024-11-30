@@ -13,7 +13,7 @@ import java.util.Queue;
 //Class
 public class Ride implements RideInterface {
     private String rideName;
-    private int rideWaitingTime;
+    private int averageRideWaitingTime;
     private Queue<Visitor> waitingLine;
     private Employee rideOperator;
     private LinkedList<Visitor> rideHistory;
@@ -30,9 +30,9 @@ public class Ride implements RideInterface {
     }
 
     //Second Constructor
-    public Ride (String rideName, int rideWaitingTime, Employee rideOperator) {
+    public Ride (String rideName, int averageRideWaitingTime, Employee rideOperator) {
         this.rideName = rideName;
-        this.rideWaitingTime = rideWaitingTime;
+        this.averageRideWaitingTime = averageRideWaitingTime;
         this.rideOperator = rideOperator;
         this.waitingLine = new LinkedList<>();
         this.rideHistory = new LinkedList<>();
@@ -47,12 +47,12 @@ public class Ride implements RideInterface {
         this.rideName = rideName;
     }
 
-    public int getRideWaitingTime () {
-        return rideWaitingTime;
+    public int getAverageRideWaitingTimeime () {
+        return averageRideWaitingTime;
     }
 
-    public void setRideWaitingTime (int rideWaitingTime) {
-        this.rideWaitingTime = rideWaitingTime;
+    public void setAaverageRideWaitingTime (int averageRideWaitingTime) {
+        this.averageRideWaitingTime = averageRideWaitingTime;
     }
 
     public Employee getRideOperator () {
@@ -68,7 +68,7 @@ public class Ride implements RideInterface {
     public void addVisitorToQueue (Visitor visitor) {
         if (visitor != null) { 
             waitingLine.add(visitor); 
-            System.out.println(visitor.getName() + " has been added to the queue.");
+            System.out.println(visitor.getName() + " has been added to the queue  for the " + this.rideName);
         } else {
             System.out.println("No visitors in the queue");
         }
@@ -104,6 +104,8 @@ public class Ride implements RideInterface {
                 " Park Member ID-" + 
                 visitor.getParkMemberID());
             }
+                System.out.println("The average wating time of this ride is " + this.getAverageRideWaitingTimeime() + " minuetes.");
+                System.out.println("Ride operator: " + this.getRideOperator());
         }
     }
 

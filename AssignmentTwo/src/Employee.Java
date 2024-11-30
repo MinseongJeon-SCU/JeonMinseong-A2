@@ -31,4 +31,13 @@ public class Employee extends Person {
     public void setEmployeeID (int employeeID) {
         this.employeeID = employeeID;
     }
+
+    @Override
+    public String toString() {
+        return "Name: " + getName() + 
+            " Gender: " + getGender() + 
+            " Age: " + getAge() + 
+            " Employee Position: " + employeePosition + 
+            " EmployeeID: " + employeeID;
+    }
 }
