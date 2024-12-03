@@ -1,4 +1,5 @@
-//Class
+//Employee Class. 
+//Since extends has been used, the Employee class inherits from the Person class.
 public class Employee extends Person {
     private String employeePosition;
     private int employeeID;
@@ -8,7 +9,7 @@ public class Employee extends Person {
         super();
     }
 
-    //Second Constructor 
+    //Second Constructor. 
     public Employee (String name, String gender, int age, String employeePosition, int employeeID) {
         super (name, gender, age);
         this.employeePosition = employeePosition;
@@ -32,7 +33,7 @@ public class Employee extends Person {
         this.employeeID = employeeID;
     }
 
-    @Override
+    //Method to return a string representation of the Employee object for printing.
     public String toString() {
         return "Name: " + getName() + 
             " Gender: " + getGender() + 

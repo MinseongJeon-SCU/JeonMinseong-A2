@@ -1,4 +1,4 @@
-//Class
+//Person Class
 public abstract class Person {
     private String name;
     private String gender;
@@ -9,7 +9,7 @@ public abstract class Person {
 
     }
 
-    //Second Constructor
+    //Second Constructor 
     public Person (String name, String gender, int age) {
         this.name = name;
         this.gender = gender;

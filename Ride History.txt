@@ -1,0 +1,5 @@
+Bob,Male,20,Gold,66
+Jaeyong,Female,20,Bronze,7
+Yoonah,Female,73,Silver,8
+Sam,Female,59,Gold,9
+Dong,Female,45,Bronze,10

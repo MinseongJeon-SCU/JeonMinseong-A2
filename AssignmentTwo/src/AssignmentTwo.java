@@ -113,17 +113,23 @@ public class AssignmentTwo {
       R2.addVisitorToQueue(v8);
       R2.addVisitorToQueue(v9);
       R2.addVisitorToQueue(v10);
-
+      System.out.println("==================================");
+      
       R2.printQueue();
       System.out.println("==================================");
 
-      R2.runOneCycle();
-
+      R2.runOneCycle(); //First cycle
+      System.out.println("==================================");
       R2.printQueue();
+    
+      R2.printRideHistory(); 
       System.out.println("==================================");
 
-      R2.printRideHistory();
+      R2.runOneCycle(); //Second cycle
       System.out.println("==================================");
+      R2.printQueue();
+    
+      R2.printRideHistory(); 
     }
 
     public void partSix(){
@@ -142,18 +148,19 @@ public class AssignmentTwo {
       R2.addVisitorToHistory(v9);
       R2.addVisitorToHistory(v10);
 
-      R2.exportRideHistory("Ride History");
+      R2.exportRideHistory("Ride History.txt");
     }
 
     public void partSeven(){
       Employee rideOperator = new Employee("HyeonSeo" , "Female", 30, "Security", 22);
       Ride R2 = new Ride ("BatMan RollerCoaster", 20, rideOperator);
 
-      String visitorFile = "Ride History";
+      String visitorFile = "Ride History.txt";
       R2.importRideHistory(visitorFile);
       R2.printRideHistory();
-      System.out.println("The number of visitors in the ride history is: " + R2.numberOfVisitors());
+      System.out.println(R2.numberOfVisitors());
     }
+    
   }
     
 

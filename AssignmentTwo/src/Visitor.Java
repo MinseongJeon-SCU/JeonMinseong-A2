@@ -1,4 +1,5 @@
-//Class
+//Visitor Class
+//Since extends has been used, the Visitor class inherits from the Person class.
 public class Visitor extends Person {
     private String membershipType;
     private int parkMemberID;

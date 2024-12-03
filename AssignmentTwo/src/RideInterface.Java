@@ -1,4 +1,4 @@
-
+//An interface contains method declarations with no implementation of the methods.
 public interface RideInterface {
     void addVisitorToQueue (Visitor visitor); 
     void removeVisitorFromQueue ();
